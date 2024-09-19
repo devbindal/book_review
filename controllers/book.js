@@ -43,7 +43,7 @@ async function getAllBooks(req, res) {
             return res.json({ message: "Please, provide a valid title!" });
         }
 
-        const foundBooks = await books.filter(book => book.ISBN == title);
+        const foundBooks = await books.filter(book => book.title == title);
         if (foundBooks.length) {
             return res.json({ message: "Books are Found!!", foundBooks });
         }
@@ -64,7 +64,7 @@ async function getAllBooks(req, res) {
             return res.json({ message: "Please, provide a valid author name!" });
         }
 
-        const foundBooks = await books.filter(book => book.ISBN == author);
+        const foundBooks = await books.filter(book => book.author == author);
         if (foundBooks.length) {
             return res.json({ message: "Books are Found!!", foundBooks });
         }
